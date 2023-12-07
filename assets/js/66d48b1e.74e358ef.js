@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[2961],{6548:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/machinelearningbook/blog/tags/facebook","allTagsPath":"/machinelearningbook/blog/tags","count":1,"unlisted":false}')}}]);
