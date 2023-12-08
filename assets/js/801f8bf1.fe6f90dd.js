@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[8101],{3933:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/machinelearningbook/blog/tags/docusaurus","allTagsPath":"/machinelearningbook/blog/tags","count":4,"unlisted":false}')}}]);
