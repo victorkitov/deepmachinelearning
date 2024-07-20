@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
-<title data-rh="true">Обработка видео | Машинное и глубокое обучение</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://deepmachinelearning.ru/img/social-card.png"><meta data-rh="true" name="twitter:image" content="https://deepmachinelearning.ru/img/social-card.png"><meta data-rh="true" property="og:url" content="https://deepmachinelearning.ru/docs/docs_dl/Tasks/Video-task-examples"><meta data-rh="true" property="og:locale" content="ru"><meta data-rh="true" name="docusaurus_locale" content="ru"><meta data-rh="true" name="docsearch:language" content="ru"><meta data-rh="true" name="keywords" content="алгоритмы машинного обучения, методы прогнозирования, анализ данных, data science, machine learning, learn machine"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Обработка видео | Машинное и глубокое обучение"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://deepmachinelearning.ru/docs/docs_dl/Tasks/Video-task-examples"><link data-rh="true" rel="alternate" href="https://deepmachinelearning.ru/docs/docs_dl/Tasks/Video-task-examples" hreflang="ru"><link data-rh="true" rel="alternate" href="https://deepmachinelearning.ru/docs/docs_dl/Tasks/Video-task-examples" hreflang="x-default"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.fa4683e6.css">
-<script src="/assets/js/runtime~main.1be0b2ed.js" defer="defer"></script>
+<title data-rh="true">Обработка видео | Машинное и глубокое обучение</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://deepmachinelearning.ru/img/social-card.png"><meta data-rh="true" name="twitter:image" content="https://deepmachinelearning.ru/img/social-card.png"><meta data-rh="true" property="og:url" content="https://deepmachinelearning.ru/docs/docs_dl/Tasks/Video-task-examples"><meta data-rh="true" property="og:locale" content="ru"><meta data-rh="true" name="docusaurus_locale" content="ru"><meta data-rh="true" name="docsearch:language" content="ru"><meta data-rh="true" name="keywords" content="алгоритмы машинного обучения, методы прогнозирования, анализ данных, data science, machine learning, learn machine"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Обработка видео | Машинное и глубокое обучение"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://deepmachinelearning.ru/docs/docs_dl/Tasks/Video-task-examples"><link data-rh="true" rel="alternate" href="https://deepmachinelearning.ru/docs/docs_dl/Tasks/Video-task-examples" hreflang="ru"><link data-rh="true" rel="alternate" href="https://deepmachinelearning.ru/docs/docs_dl/Tasks/Video-task-examples" hreflang="x-default"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.0025c082.css">
+<script src="/assets/js/runtime~main.fd24ba3b.js" defer="defer"></script>
 <script src="/assets/js/main.c96e864f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -14,18 +14,18 @@
 <li>
 <p>Класс одного из заданных действий.</p>
 <ul>
-<li>например, при игрой в игровой приставке по жесту игрока нужно осуществить  то или иное действие, при этом жесты заранее определены и заданы. Эта задача также известна как распознавание жестов (gesture recognition).</li>
+<li>например, при игре на игровой приставке по жесту игрока нужно осуществить  то или иное действие, при этом жесты заранее определены и заданы. Эта задача также известна как распознавание жестов (gesture recognition).</li>
 </ul>
 </li>
 <li>
 <p>Текстовое описание происходящего в виде свободного текста.</p>
 <ul>
-<li>например, в системе безопасности, наблюдающей за людьми или конвейером на производстве; при этом допускаются чрезвычайные ситуации, заранее не предусмотренные при разработке системы.</li>
+<li>например, в системе безопасности, наблюдающей за людьми, или конвейером на производстве; при этом допускаются чрезвычайные ситуации, заранее не предусмотренные при разработке системы.</li>
 </ul>
 </li>
 </ul>
 <p>В задаче <strong>3-D реконструкции</strong> по видеосъемке объекта из разных позиций и ракурсов необходимо восстановить 3-D модель объекта. Используется в картографии при аэрофотосъемке, построении 3-D макетов помещений.</p>
-<p>Задач а <strong>трекинга объектов</strong> на видео (object tracking) представляет собой задачу детекции объектов (object detection), т.е. выделение объекта рамкой. При этом детекция производится точнее за счёт использования информации с более ранних и более поздних детекций и интерполяции движения объекта. Обычно для интерполяции  используется <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80_%D0%9A%D0%B0%D0%BB%D0%BC%D0%B0%D0%BD%D0%B0" target="_blank" rel="noopener noreferrer">фильтр Калмана</a> (Kalman filter). Интерполяция движения позволяет обнаруживать движущийся объект более устойчиво, даже если на некоторых кадрах он загораживается другими объектами. Трекинг объектов используется для</p>
+<p>Задача <strong>трекинга объектов</strong> на видео (object tracking) представляет собой задачу детекции объектов (object detection), т.е. выделение объекта рамкой. При этом детекция производится точнее за счёт использования информации с более ранних и более поздних детекций и интерполяции движения объекта. Обычно для интерполяции  используется <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80_%D0%9A%D0%B0%D0%BB%D0%BC%D0%B0%D0%BD%D0%B0" target="_blank" rel="noopener noreferrer">фильтр Калмана</a> (Kalman filter). Интерполяция движения позволяет обнаруживать движущийся объект более устойчиво, даже если на некоторых кадрах он загораживается другими объектами. Трекинг объектов используется для</p>
 <ul>
 <li>
 <p>контроля пассажиропотока, подсчёта числа вошедших и вышедших пассажиров;</p>
@@ -40,7 +40,7 @@
 <p>слежения за машинами, автоматическое определение превышения допустимой скорости и аварий на дорогах.</p>
 </li>
 </ul>
-<p>Трекинг может быть совмещён с другой задачей, например можно не только следить за собеседниками на совещании, но и определять, когда какой собеседник говорит, чтобы автоматически на нём фокусироваться.</p>
+<p>Трекинг может быть совмещён с другой задачей, например можно не только следить за собеседниками на совещании, но и определять, когда какой собеседник говорит, чтобы камера могла автоматически на нём сфокусироваться.</p>
 <p>Отдельный более сложный класс задач представляет <strong>генерация видео</strong> (video generation).</p>
 <p><strong>Стилизация видео</strong> (video style transfer) - задача, в которой видео необходимо перерисовать в стиле, задаваемом другим изображением (обычно картиной известного художника). Широко применяется в индустрии развлечений.</p>
 <p>Можно решать задачу <strong>предсказания будущих кадров</strong> по уже известному видео. Например, по карте движения атмосферных циклонов предсказывать погоду в будущем.</p>
