@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
-<title data-rh="true">Модель CenterNet | Машинное и глубокое обучение</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://deepmachinelearning.ru/img/social-card2.png"><meta data-rh="true" name="twitter:image" content="https://deepmachinelearning.ru/img/social-card2.png"><meta data-rh="true" property="og:url" content="https://deepmachinelearning.ru/docs/Neural-networks/Object-detection/CenterNet"><meta data-rh="true" property="og:locale" content="ru"><meta data-rh="true" name="docusaurus_locale" content="ru"><meta data-rh="true" name="docsearch:language" content="ru"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Модель CenterNet | Машинное и глубокое обучение"><meta data-rh="true" name="keywords" content="детекция объектов,object detection,задача детекции объектов,детекция объектов на изображении,методы детекции объектов,object detection models,нейронная сеть"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://deepmachinelearning.ru/docs/Neural-networks/Object-detection/CenterNet"><link data-rh="true" rel="alternate" href="https://deepmachinelearning.ru/docs/Neural-networks/Object-detection/CenterNet" hreflang="ru"><link data-rh="true" rel="alternate" href="https://deepmachinelearning.ru/docs/Neural-networks/Object-detection/CenterNet" hreflang="x-default"><link rel="preconnect" href="https://mc.yandex.ru">
+<title data-rh="true">Модель CenterNet | Машинное и глубокое обучение</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://deepmachinelearning.ru/img/social-card2.png"><meta data-rh="true" name="twitter:image" content="https://deepmachinelearning.ru/img/social-card2.png"><meta data-rh="true" property="og:url" content="https://deepmachinelearning.ru/docs/Neural-networks/Object-detection/CenterNet"><meta data-rh="true" property="og:locale" content="ru"><meta data-rh="true" name="docusaurus_locale" content="ru"><meta data-rh="true" name="docsearch:language" content="ru"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Модель CenterNet | Машинное и глубокое обучение"><meta data-rh="true" name="description" content="Модель CenterNet для детекции объектов на изображениях."><meta data-rh="true" property="og:description" content="Модель CenterNet для детекции объектов на изображениях."><meta data-rh="true" name="keywords" content="CenterNet,CenterNet нейросеть,методы детекции объектов,object detection models,нейронная сеть"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://deepmachinelearning.ru/docs/Neural-networks/Object-detection/CenterNet"><link data-rh="true" rel="alternate" href="https://deepmachinelearning.ru/docs/Neural-networks/Object-detection/CenterNet" hreflang="ru"><link data-rh="true" rel="alternate" href="https://deepmachinelearning.ru/docs/Neural-networks/Object-detection/CenterNet" hreflang="x-default"><link rel="preconnect" href="https://mc.yandex.ru">
 <script>!function(e,t,a,c,n,r,i){e[n]=e[n]||function(){(e[n].a=e[n].a||[]).push(arguments)},e[n].l=1*new Date,r=t.createElement(a),i=t.getElementsByTagName(a)[0],r.async=1,r.src="https://mc.yandex.ru/metrika/tag.js",i.parentNode.insertBefore(r,i)}(window,document,"script",0,"ym"),ym(98444042,"init",{defer:!0,clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!1,ecommerce:!1,trackHash:!1})</script>
 <noscript>
                             <div><img src="https://mc.yandex.ru/watch/98444042" style="position:absolute; left:-9999px;" alt=""></div>
                         </noscript>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.8f598318.css">
-<script src="/assets/js/runtime~main.d224a820.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.00e364af.js" defer="defer"></script>
 <script src="/assets/js/main.0773afd7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,57 +29,58 @@
 <p>Для точного детектирования центра рамки используется специальный вид пулинга - <strong>CenterPooling</strong>. Этот пулинг для каждой позиции на карте признаков:</p>
 <ol>
 <li>
-<p>ищет максимальное значение вдоль горизонтальной оси,</p>
+<p>ищет максимальное значение вдоль горизонтальной оси;</p>
 </li>
 <li>
-<p>ищет максимальное значение вдоль вертикальной оси,</p>
+<p>ищет максимальное значение вдоль вертикальной оси;</p>
 </li>
 <li>
 <p>суммирует два найденных максимума.</p>
 </li>
 </ol>
-<p>Для повышения точности детектирования углов рамок вместо CornerPooling используется <strong>CascadeCornerPooling</strong>. CornerPooling хорошо работает для детекции границ объекта, но не способен заглядывать внутрь него, что как раз и исправляется через CascadeCornerPooling, работающего следующим образом для левого верхнего угла рамки:</p>
+<p>Для повышения точности детектирования углов рамок вместо <a href="/docs/Neural-networks/Object-detection/CornerNet">CornerPooling</a> используется <strong>CascadeCornerPooling</strong>. CornerPooling хорошо работает для детекции границ объекта, но <u>не способен заглядывать внутрь него</u>, что как раз и исправляется через CascadeCornerPooling, работающего следующим образом для левого верхнего угла рамки:</p>
 <p>Для каждой позиции карты признаков:</p>
 <ol>
 <li>
-<p>ищется максимальный элемент, если сдвигаться вправо до края изображения</p>
+<p>ищется максимальный элемент, если сдвигаться вправо до края изображения;</p>
 </li>
 <li>
-<p>ищется максимальный элемент, если относительно позиции найденного максимума сдвигаться вниз</p>
+<p>ищется максимальный элемент, если относительно позиции найденного максимума сдвигаться вниз;</p>
 </li>
 <li>
-<p>максимумы первого и второго шага суммируются, сумма записывается в текущую позицию</p>
+<p>максимумы первого и второго шага суммируются, сумма записывается в текущую позицию.</p>
 </li>
 </ol>
-<p> Также</p>
+<p>Аналогично для каждой позиции карты признаков:</p>
 <ol>
 <li>
-<p>ищется максимальный элемент, если сдвигаться вниз до края изображения</p>
+<p>ищется максимальный элемент, если сдвигаться вниз до края изображения;</p>
 </li>
 <li>
-<p>ищется максимальный элемент, если относительно позиции найденного максимума сдвигаться вправо</p>
+<p>ищется максимальный элемент, если относительно позиции найденного максимума сдвигаться вправо;</p>
 </li>
 <li>
-<p>максимумы первого и второго шага суммируются, сумма записывается в текущую позицию</p>
+<p>максимумы первого и второго шага суммируются, сумма записывается в текущую позицию.</p>
 </li>
 </ol>
 <p>Для правого нижнего угла операции в CascadeCornerPooling аналогичны, но инвертируются:</p>
 <ul>
 <li>
-<p>сдвиг вправо заменяется на сдвиг влево</p>
+<p>сдвиг вправо заменяется на сдвиг влево;</p>
 </li>
 <li>
-<p>сдвиг вниз заменяется на сдвиг вверх</p>
+<p>сдвиг вниз заменяется на сдвиг вверх.</p>
 </li>
 </ul>
-<p>Графически CenterPooling, CornerPooling и CascadeCornerPooling показаны ниже [<a href="https://openaccess.thecvf.com/content_ICCV_2019/html/Duan_CenterNet_Keypoint_Triplets_for_Object_Detection_ICCV_2019_paper.html" target="_blank" rel="noopener noreferrer">1</a>] как соответственно (a),(b),(c):</p>
+<p>Графически CenterPooling, CornerPooling и CascadeCornerPooling показаны ниже на рисунках (a),(b),(c) [<a href="https://openaccess.thecvf.com/content_ICCV_2019/html/Duan_CenterNet_Keypoint_Triplets_for_Object_Detection_ICCV_2019_paper.html" target="_blank" rel="noopener noreferrer">1</a>]:</p>
 <p><img decoding="async" loading="lazy" src="/assets/images/Pooling-types-9e711ea40f586d26f4b2c48cca3ee9cf.jpg" width="1532" height="404" class="img_ev3q"></p>
-<p>Для повышения точности CenterNet применялся к исходному изображению и горизонтально отражённому, при этом одно и то же изображение бралось в разных разрешениях. К обнаруженным детекчиям применялся мягкое подавление не-максимумов (soft NMS).</p>
-<p>В итоге на датасете MS COCO [<a href="https://link.springer.com/chapter/10.1007/978-3-319-10602-1_48" target="_blank" rel="noopener noreferrer">2</a>] предложенная модель показала зн ачение AP, равное 47%.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="применение">Применение<a class="hash-link" aria-label="Прямая ссылка на Применение" title="Прямая ссылка на Применение" href="/docs/Neural-networks/Object-detection/CenterNet#применение">​</a></h2>
+<p>Для повышения точности CenterNet применялся к исходному изображению и горизонтально отражённому, при этом одно и то же изображение бралось в разных разрешениях. К обнаруженным детекциям применялся мягкое подавление не-максимумов (soft NMS).</p>
+<p>В итоге на датасете <a href="https://cocodataset.org/" target="_blank" rel="noopener noreferrer">MS COCO</a> [<a href="https://link.springer.com/chapter/10.1007/978-3-319-10602-1_48" target="_blank" rel="noopener noreferrer">2</a>] предложенная модель показала значение AP, равное 47%.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="литература">Литература<a class="hash-link" aria-label="Прямая ссылка на Литература" title="Прямая ссылка на Литература" href="/docs/Neural-networks/Object-detection/CenterNet#литература">​</a></h2>
 <ol>
 <li><a href="https://openaccess.thecvf.com/content_ICCV_2019/html/Duan_CenterNet_Keypoint_Triplets_for_Object_Detection_ICCV_2019_paper.html" target="_blank" rel="noopener noreferrer">Duan K. et al. Centernet: Keypoint triplets for object detection //Proceedings of the IEEE/CVF international conference on computer vision. – 2019. – С. 6569-6578.</a></li>
 <li><a href="https://link.springer.com/chapter/10.1007/978-3-319-10602-1_48" target="_blank" rel="noopener noreferrer">Lin T. Y. et al. Microsoft coco: Common objects in context //Computer Vision–ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part V 13. – Springer International Publishing, 2014. – С. 740-755.</a></li>
-</ol></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Страница документа"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/Neural-networks/Object-detection/CornerNet"><div class="pagination-nav__sublabel">Предыдущая страница</div><div class="pagination-nav__label">CornerNet</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/Neural-networks/Object-detection/Two-stage-detectors"><div class="pagination-nav__sublabel">Следующая страница</div><div class="pagination-nav__label">Двухстадийные детекторы</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a class="table-of-contents__link toc-highlight" href="/docs/Neural-networks/Object-detection/CenterNet#архитектура">Архитектура</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/Neural-networks/Object-detection/CenterNet#специальные-виды-пулинга">Специальные виды пулинга</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/Neural-networks/Object-detection/CenterNet#литература">Литература</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">© 2023-25 <a href="https://victorkitov.github.io/">Виктор Китов</a>.</div></div></div></footer></div>
+</ol></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Страница документа"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/Neural-networks/Object-detection/CornerNet"><div class="pagination-nav__sublabel">Предыдущая страница</div><div class="pagination-nav__label">CornerNet</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/Neural-networks/Object-detection/Two-stage-detectors"><div class="pagination-nav__sublabel">Следующая страница</div><div class="pagination-nav__label">Двухстадийные детекторы</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a class="table-of-contents__link toc-highlight" href="/docs/Neural-networks/Object-detection/CenterNet#архитектура">Архитектура</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/Neural-networks/Object-detection/CenterNet#специальные-виды-пулинга">Специальные виды пулинга</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/Neural-networks/Object-detection/CenterNet#применение">Применение</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/Neural-networks/Object-detection/CenterNet#литература">Литература</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">© 2023-25 <a href="https://victorkitov.github.io/">Виктор Китов</a>.</div></div></div></footer></div>
 </body>
 </html>
